@@ -164,40 +164,6 @@ for (let index = 0; index < tabs.length; index++) {
 	}
 }
 
-// var cursor = document.querySelector(".cursor"),
-//    follower = document.querySelector(".cursor-follower");
-
-// var posX = 0,
-//    posY = 0,
-//    mouseX = 0,
-//    mouseY = 0;
-
-// TweenMax.to({}, 0.016, {
-//    repeat: -1,
-//    onRepeat: function () {
-//       posX += (mouseX - posX) / 9;
-//       posY += (mouseY - posY) / 9;
-
-//       TweenMax.set(follower, {
-//          css: {
-//             left: posX - 20,
-//             top: posY - 11
-//          }
-//       });
-
-//       TweenMax.set(cursor, {
-//          css: {
-//             left: mouseX,
-//             top: mouseY
-//          }
-//       });
-//    }
-// });
-// $(document).on("mousemove", function (e) {
-//    mouseX = e.pageX;
-//    mouseY = e.pageY;
-// });
-
 //BildSlider
 let sliders = document.querySelectorAll('._swiper');
 if (sliders) {
@@ -325,10 +291,11 @@ let combo_about = new Swiper('.combo__swiper', {
 	observer: true,
 	observeParents: true,
 	spaceBetween: 36,
-	// autoHeight: false,
+	autoHeight: true,
 	//touchRatio: 0,
 	//simulateTouch: false,
 	//loop: true,
+	freeMode: true,
 	//preloadImages: false,
 	//lazy: true,
 	// Dotts
@@ -346,12 +313,19 @@ let combo_about = new Swiper('.combo__swiper', {
 			slidesPerView: 1,
 			spaceBetween: 30,
 		},
+		480: {
+			slidesPerView: 1.55,
+			spaceBetween: 30,
+		},
 		768: {
 			slidesPerView: 2,
 		},
 		992: {
-			slidesPerView: 3,
+			slidesPerView: 2.7,
 		},
+		1024: {
+			slidesPerView: 3,
+		}
 	},
 	on: {
 		lazyImageReady: function () {
@@ -363,6 +337,8 @@ let combo_about = new Swiper('.combo__swiper', {
 	//	el: '.swiper-scrollbar',
 	//},
 });
+
+
 let scr_body = document.querySelector('body');
 let scr_blocks = document.querySelectorAll('._scr-sector');
 let scr_items = document.querySelectorAll('._scr-item');
@@ -382,7 +358,7 @@ function scroll_scroll() {
 	let src_value = currentScroll = pageYOffset;
 	let header = document.querySelector('header.header');
 	if (header !== null) {
-		if (src_value > 10) {
+		if (src_value > 1) {
 			header.classList.add('_scroll');
 		} else {
 			header.classList.remove('_scroll');

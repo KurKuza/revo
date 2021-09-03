@@ -123,6 +123,8 @@ body {
 
 body._lock {
   overflow: hidden;
+  -ms-touch-action: none;
+      touch-action: none;
 }
 
 ::-webkit-scrollbar {
@@ -145,82 +147,6 @@ body {
 
 .t-records a {
   cursor: none;
-}
-
-.cursor {
-  position: absolute;
-  background: #c7a17a;
-  height: 8px;
-  width: 8px;
-  border-radius: 100px;
-  z-index: 99;
-  -webkit-transition: 0.2s cubic-bezier(0.075, -1.27, 0.3, 2.33) opacity, 0.5s cubic-bezier(0.075, -1.27, 0.3, 2.33) -webkit-transform;
-  transition: 0.2s cubic-bezier(0.075, -1.27, 0.3, 2.33) opacity, 0.5s cubic-bezier(0.075, -1.27, 0.3, 2.33) -webkit-transform;
-  -o-transition: 0.5s cubic-bezier(0.075, -1.27, 0.3, 2.33) transform, 0.2s cubic-bezier(0.075, -1.27, 0.3, 2.33) opacity;
-  transition: 0.5s cubic-bezier(0.075, -1.27, 0.3, 2.33) transform, 0.2s cubic-bezier(0.075, -1.27, 0.3, 2.33) opacity;
-  transition: 0.5s cubic-bezier(0.075, -1.27, 0.3, 2.33) transform, 0.2s cubic-bezier(0.075, -1.27, 0.3, 2.33) opacity, 0.5s cubic-bezier(0.075, -1.27, 0.3, 2.33) -webkit-transform;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
-  pointer-events: none;
-  -webkit-transform: scale(0.8);
-      -ms-transform: scale(0.8);
-          transform: scale(0.8);
-}
-
-._no-webp .cursor::before{
-  background-image: url("http://mirkozeppieri.emanuelepapale.com/wp-content/uploads/2018/07/project-hover-cursor.jpg"); }
-
-.cursor::before {
-  content: "";
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  display: block;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  border-radius: 100%;
-  opacity: 0;
-}
-
-.cursor.active {
-  opacity: 1;
-  -webkit-transform: scale(12);
-      -ms-transform: scale(12);
-          transform: scale(12);
-}
-
-.cursor-follower {
-  position: absolute;
-  background-color: rgba(236, 226, 211, 0.795);
-  width: 40px;
-  height: 40px;
-  z-index: 98;
-  border-radius: 100%;
-  -webkit-transition: 0.5s cubic-bezier(0.075, -1.27, 0.3, 2.33) opacity, 0.6s cubic-bezier(0.075, -1.27, 0.3, 2.33) -webkit-transform;
-  transition: 0.5s cubic-bezier(0.075, -1.27, 0.3, 2.33) opacity, 0.6s cubic-bezier(0.075, -1.27, 0.3, 2.33) -webkit-transform;
-  -o-transition: 0.6s cubic-bezier(0.075, -1.27, 0.3, 2.33) transform, 0.5s cubic-bezier(0.075, -1.27, 0.3, 2.33) opacity;
-  transition: 0.6s cubic-bezier(0.075, -1.27, 0.3, 2.33) transform, 0.5s cubic-bezier(0.075, -1.27, 0.3, 2.33) opacity;
-  transition: 0.6s cubic-bezier(0.075, -1.27, 0.3, 2.33) transform, 0.5s cubic-bezier(0.075, -1.27, 0.3, 2.33) opacity, 0.6s cubic-bezier(0.075, -1.27, 0.3, 2.33) -webkit-transform;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
-  pointer-events: none;
-  -webkit-transform: translate(4px, -4px);
-      -ms-transform: translate(4px, -4px);
-          transform: translate(4px, -4px);
-}
-
-.cursor-follower.active {
-  opacity: 0.3;
-  -webkit-transform: scale(0);
-      -ms-transform: scale(0);
-          transform: scale(0);
 }
 
 .wrapper {
@@ -694,7 +620,7 @@ textarea.input {
   padding: 7px 16px;
   font-weight: 700;
   font-family: Nunito;
-  cursor: none;
+  cursor: pointer;
   background-color: #c7a17a;
   border-radius: 19px;
 }
@@ -703,7 +629,7 @@ textarea.input {
   font-family: Nunito;
   font-weight: 700;
   color: #151d28;
-  cursor: none;
+  cursor: pointer;
 }
 
 .row:after {
@@ -1133,7 +1059,8 @@ body.ie ._ibg img {
 }
 
 .header__icon-shop {
-  padding-right: 15px;
+  cursor: pointer;
+  padding-right: 30px;
 }
 
 .header__icon-shop img {
@@ -1549,6 +1476,7 @@ body.ie ._ibg img {
   right: 130px;
   width: 48px;
   height: 48px;
+  cursor: pointer;
   background: #c7a17a;
   border-radius: 50%;
 }
@@ -1565,6 +1493,7 @@ body.ie ._ibg img {
           align-items: center;
   z-index: 50;
   width: 48px;
+  cursor: pointer;
   opacity: 1;
   visibility: visible;
   -webkit-transition: all 0.5s ease 0s;
@@ -1965,6 +1894,7 @@ body.ie ._ibg img {
   width: 48px;
   opacity: 1;
   visibility: visible;
+  cursor: pointer;
   -webkit-transition: all 0.5s ease 0s;
   -o-transition: all 0.5s ease 0s;
   transition: all 0.5s ease 0s;
@@ -1990,6 +1920,7 @@ body.ie ._ibg img {
   right: 130px;
   width: 48px;
   height: 48px;
+  cursor: pointer;
   background: #c7a17a;
   border-radius: 50%;
 }
@@ -2162,13 +2093,16 @@ body.ie ._ibg img {
     display: -ms-flexbox;
     display: flex;
     visibility: visible;
-    opacity: 1;
-    position: absolute;
+    opacity: 0.95;
+    position: fixed;
     width: 320px;
     height: 100%;
     top: 0px;
     right: 0;
+    overflow: auto;
     z-index: 10;
+    -ms-touch-action: none;
+        touch-action: none;
   }
 
   .header__icons {
@@ -2178,10 +2112,10 @@ body.ie ._ibg img {
   .icon-menu {
     display: block;
     position: relative;
-    top: 0px;
+    top: 2px;
     right: 0px;
-    width: 24px;
-    height: 24px;
+    width: 28px;
+    height: 20px;
     cursor: pointer;
     z-index: 5;
   }
@@ -2244,6 +2178,14 @@ body.ie ._ibg img {
 
   .select__options {
     font-size: 18px;
+  }
+
+  .cursor {
+    display: none;
+  }
+
+  .cursor-follower {
+    display: none;
   }
 
   .coffee {
@@ -2322,6 +2264,10 @@ body.ie ._ibg img {
     background: none;
   }
 
+  .giftset__box {
+    display: block;
+  }
+
   .giftset__box::before {
     content: "";
     height: 450px;
@@ -2329,11 +2275,12 @@ body.ie ._ibg img {
 
   .giftset__center {
     margin: 0;
+    display: block;
+    max-height: 500px;
   }
 
   .giftset__titles {
     padding-top: 20px;
-    padding-bottom: 40px;
   }
 
   .giftset__tabs-item {
@@ -2444,5 +2391,3 @@ body.ie ._ibg img {
     color: #c7a17a;
   }
 }
-
-._webp .cursor::before{ background-image: url(http://mirkozeppieri.emanuelepapale.com/wp-content/uploads/2018/07/project-hover-cursor.webp); }

@@ -1026,6 +1026,9 @@ body.ie ._ibg img {
 
 .header__content {
   z-index: 50;
+  -webkit-transition: all 0.3s ease 0s;
+  -o-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
 }
 
 .header__body {
@@ -2080,6 +2083,10 @@ body.ie ._ibg img {
 }
 
 @media (max-width: 1024px) {
+  .wrapper._loaded .right-panel {
+    overflow: hidden;
+  }
+
   .right-panel {
     display: none;
     right: 0%;
@@ -2383,6 +2390,10 @@ body.ie ._ibg img {
 }
 
 @media (any-hover: hover) {
+  .btn:hover {
+    color: #c7a17a;
+  }
+
   .header._scroll .header__wrapper:hover {
     background-color: #415167c2;
   }

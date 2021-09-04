@@ -56,7 +56,7 @@ let unlock = true;
 let iconMenu = document.querySelector(".icon-menu");
 if (iconMenu != null) {
 	let delay = 500;
-	let menuBody = document.querySelector(".menu__body");
+	let menuBody = document.querySelector(".right-panel");
 	iconMenu.addEventListener("click", function (e) {
 		if (unlock) {
 			body_lock(delay);
@@ -67,7 +67,7 @@ if (iconMenu != null) {
 };
 function menu_close() {
 	let iconMenu = document.querySelector(".icon-menu");
-	let menuBody = document.querySelector(".menu__body");
+	let menuBody = document.querySelector(".right-panel");
 	iconMenu.classList.remove("_active");
 	menuBody.classList.remove("_active");
 }
@@ -164,6 +164,17 @@ for (let index = 0; index < tabs.length; index++) {
 	}
 }
 
+window.onload = function(){
+   document.onclick('click', documentActions);
+
+   function documentActions(e) {
+      const targetElement = e.target;
+      if (targetElement.classList.contains('coffee__links')) {
+         const productId = targetElement.closest('.coffee__item').dataset.pid;
+         addToCart(targetElement, o)
+      };
+   };
+};
 //BildSlider
 let sliders = document.querySelectorAll('._swiper');
 if (sliders) {
@@ -358,7 +369,7 @@ function scroll_scroll() {
 	let src_value = currentScroll = pageYOffset;
 	let header = document.querySelector('header.header');
 	if (header !== null) {
-		if (src_value > 1) {
+		if (src_value > 10) {
 			header.classList.add('_scroll');
 		} else {
 			header.classList.remove('_scroll');
@@ -370,12 +381,10 @@ function scroll_scroll() {
 			let block_offset = offset(block).top;
 			let block_height = block.offsetHeight;
 
-			/*
 			if ((src_value > block_offset - block_height) && src_value < (block_offset + block_height) && window.innerHeight > scr_min_height && window.innerWidth > 992) {
 				let scrProcent = (src_value - block_offset) / block_height * 100;
 				scrParallax(block, scrProcent, block_height);
 			}
-			*/
 
 			if ((pageYOffset > block_offset - window.innerHeight / 1.5) && pageYOffset < (block_offset + block_height) - window.innerHeight / 5) {
 				block.classList.add('_scr-sector_active');
@@ -630,7 +639,7 @@ if (goto_links) {
 		goto_link.addEventListener('click', function (e) {
 			let target_block_class = goto_link.getAttribute('href').replace('#', '');
 			let target_block = document.querySelector('.' + target_block_class);
-			_goto(target_block, 300);
+			_goto(target_block, 1000);
 			e.preventDefault();
 		});
 	}
